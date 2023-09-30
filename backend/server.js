@@ -24,13 +24,13 @@ app.post('/post_blog',async(req,res)=>{
     res.status(200).json({message:"data posted successfull"})
 })
 
-
+//get method
 app.get('/',async(req,res)=>{
     const data=await blogModel.find()
     res.send(data)
 })
 
-
+//delete method
 app.delete('/delete_blog/:id',async(req,res)=>{
     let data=await blogModel.findByIdAndDelete(req.params.id);
     res.json({message:"the blog deletes successfully"})
